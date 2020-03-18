@@ -11,4 +11,4 @@ const students = new Schema({
         }],
     studies: String
 });
-module.exports = mongoose.model('Students', students);
+module.exports = mongoose.model('students', students);

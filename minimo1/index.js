@@ -1,15 +1,20 @@
 "use strict";
-
+//¡¡¡¡¡¡¡¡¡IMPORTANTE: EL NOMBRE DE LAS COLECCIONES EN MINUSCULA PORQUE SINO NO LAS DETECTA!!!!!!!!!
 //Import libraries
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+
 //Import routes
-const studentsRouter = require("./routes/StudentsRoutes"); //variable con la ruta
+const studentsRouter = require("./routes/StudentsRoutes"); //variable con la ruta students
+const subjectsRouter = require("./routes/SubjectsRoutes"); //variable con la ruta subjects
+
 //Server variable initialization
 const app = express();
 app.use(cors());
-app.use('/students', studentsRouter);
+app.use('/estudiantes', studentsRouter);   //students
+app.use('/asignaturas', subjectsRouter);   //subjects
+
 //Mongo database connection
 mongoose.connect("mongodb://127.0.0.1:27017/dbminimo1", {
     useNewUrlParser: true,
